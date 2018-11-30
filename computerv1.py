@@ -10,10 +10,6 @@ from modules.Solution import *
 from modules.graph import *
 
 
-
-def validation(line):
-	pass
-
 def parsing(line):
 	left = re.findall(r'.+(?=.*=)', line)[0]
 	right = re.findall(r'(?!.*=).+', line)[0]
@@ -72,7 +68,6 @@ def main():
 		line = line_array[ran]
 	try:
 		line = line.upper()
-		validation(line)
 		to_left = parsing(re.sub(r' ', '', line))
 
 		minimized = minimize(to_left)
